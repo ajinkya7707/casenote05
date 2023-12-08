@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Casenote</title>
+  <!--base href="/"-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+    /* You can add global styles to this file, and also import other style files */
+
+
+#wrapper{width:100%;margin: 0 auto;overflow: hidden;}
+* {margin: 0;padding: 0;}
+.row {max-width: 1280px;margin: 0 auto;padding: 0px;width: 100%;}
+header{width: 100%;height: 60px;background: #2e4070;position: fixed;z-index: 999;}
+header h4 {width:100%;font-size: 18px;font-family: arial;padding: 20px 2%;color: #fff;}
+* {margin: 0;padding: 0;}
+
+.wrapper-container {margin-top: 60px;}
+/*container-left*/
+.container-left {
+  width: 18%;
+  float: left;
+  color: #fff;
+  height: 500px;
+}
+.sidenav-fix ul li{
+  list-style: none;
+  list-style: none;
+  padding: 20px 20px;
+  font-size: 14px;
+  font-family: arial;
+  cursor: pointer;
+  border-bottom: 1px solid #605c5c;
+}
+.container-right {
+  width: 79%;
+  float: left;
+  padding: 1.5%;
+  border: 1px solid #ccc;
+  margin: 1.5%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+.sidenav-fix{
+  width: 228px;
+  float: left;
+  border-top: 1px solid #ccc;
+  position:fixed;
+  background: #2e4070;
+  height: 550px;
+}
+/* .sidenav-fix ul{
+  margin-top: 10px;
+} */
+/* .sidenav-fix ul li{
+  padding-left: 12px;
+} */
+span.logo-img {
+  float: left;
+  margin-top: 12px;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+.logo-img img{width: 32px;}
+
+
+.sidenav-fix ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+i-bs {
+  padding-right: 10px;
+  float: left;
+}
+.about,.upload{font-family: Arial, Helvetica, sans-serif;}
+h3{font-size: 16px;padding-bottom: 15px;font-family: Arial, Helvetica, sans-serif;font-weight: bold;}
+.about p{font-size: 14px;}
+
+
+/*Bootstrap button*/
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+[type=reset], [type=submit], button, html [type=button] {
+  -webkit-appearance: button;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+.btn:focus, .btn:hover {
+  text-decoration: none;
+}
+.btn-info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+.btn-info:hover {
+  color: #fff;
+  background-color: #138496;
+  border-color: #117a8b;
+}
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.btn-success:hover {
+  color: #fff;
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+.upload-input {
+  margin-bottom: 15px;
+}
+[type="file"].file-input.upload-file-btn {
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: arial;
+}
+input[type=file]::file-selector-button {
+  border: none;
+  padding: .6em .6em;
+  border-radius: .2em;
+  border-right:1px solid #ccc;
+  background-color:#007bff;
+  transition: 1s;
+  color:#fff;
+  font-family: arial;
+}
+input[type=file]::file-selector-button:hover {
+  background-color: #0069d9;
+}
+
+/*casenote-insight css*/
+.casenote-insight,.form-field,.form-field label,.form-field textarea{width:100%;float:left;}
+.full-width{width:100%;float:left;}
+.half-width{width: 50%;float:left;}
+.form-field{margin-bottom: 10px;}
+.form-field label{font-family: Arial, Helvetica, sans-serif;font-size: 14px;margin-bottom: 10px;}
+.form-field textarea{height: 100px;width: 100%;margin-bottom: 10px;border: 1px solid #ccc;}
+.side-effect{margin-right: 15px;}
+
+/*accordian css*/
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px 30px 18px 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 14px;
+  transition: 0.4s;
+  border-bottom: 1px solid rgb(76, 132, 206);
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.accordion-block .active,.accordion-block .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion-block .accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  position: absolute;
+  top: 36%;
+  right: 10px;
+}
+
+.accordion-block .active:after {
+  content: "\2212";
+}
+.acc-icon-img{width: 15px;margin-right: 5px;}
+.panel {
+  padding: 0px 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.panel p {
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.accordion-block,.additional-block,.patient-case-block{width: 100%;float:left;margin-bottom: 15px;}
+h4{font-family: Arial, Helvetica, sans-serif;font-size: 15px;font-weight: bold;margin-bottom: 10px;}
+textarea.additional-textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+}
+.form-field img {
+  max-width: 100%;
+}
+.side-effect.active,.side-effect{border-radius: 0px;margin-right: 0px;}
+.cost.active,.cost{border-radius: 0px;}
+.patient-chart {width: 95%;}
+.patient-chart .modal-dialog{max-width: 600px;}
+
+/*Landing css*/
+#wrapper-landing {width: 100%;margin: 0 auto;overflow: hidden;font-family: arial;}
+.landing-page{float: left;width: 100%;background: url('./assets/Ai-bg.png');height: 595px;background-size: cover;}
+.landing-title {
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -59px;
+  font-size: 20px;
+}
+.form-control{font-size: 14px;}
+.login-title h3 {
+  margin: 0px;
+  padding: 0px;
+}
+.login-main {
+  background: #fff;
+  width: 500px;
+  position: absolute;
+  padding: 25px;
+  top: 50%;
+  left: 44%;
+  margin-left: -250px;
+  margin-top: -160px;
+}
+.cog-logo {
+  float: left;
+  width: 100%;
+  text-align: right;
+}
+.cog-logo img {
+  width: 90px;
+  height: 25px;
+}
+.login-title{float: left;width:100%;border-bottom: 2px solid #2196F3;text-align: center;}
+.login-title span{font-size: 16px;font-weight: bold;}
+.login-title img {
+  width: 35px;
+}
+.inner-text{float: left;width:100%;text-align: center;padding-bottom: 10px;}
+.inner-text span {
+  font-size: 14px;
+  font-family: arial;
+}
+button#login-submit {
+  float: right;
+}
+.forgot-password a {
+  font-size: 14px;color:#495057;
+}
+/*header page css*/
+app-headerpage {
+  float: left;
+  width: 100%;
+}
+
+/*footer css*/
+footer {
+  position: fixed;
+  background: #2e4070;
+  width: 100%;
+  float: left;
+  color: #fff;
+  text-align: center;
+  bottom: 0px;
+  left: 0px;
+}
+app-footerpage {
+  float: left;
+  width: 100%;
+}
+app-footerpage p {
+  padding: 5px;
+  margin: 0px;
+  font-size: 10px;
+  font-family: arial;
+}
+.account-con span {
+  color: #fff;
+  font-size: 12px;
+  font-family: arial;
+  float: left;
+}
+.log-title-content {
+  width: 92%;
+  float: left;
+}
+.account-con {
+  width: 8%;
+  float: left;
+  margin-top: 22px;
+}
+span.avathar-img {
+  float: left;
+  margin-right: 5px;
+}
+.avathar-img img {
+  width: 15px;
+  float: left;
+}
+.keyindicators {
+  border: 1px solid #ccc;
+  padding: 10px;
+  float: left;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+/* .chart-img {
+  padding: 12px;
+
+} */
+.chart-img img{
+  padding: 12px;
+  padding-top: 13px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+footer p {
+  padding: 5px;
+  margin: 0px;
+  font-size: 10px;
+  font-family: arial;
+}
+
+@media screen and (max-width: 1150px) {
+  .sidenav-fix{width: 18%;}
+}
+
+@media screen and (max-width: 780px) {
+  .half-width{width: 100%;}
+}
+  </style>
+</head>
+<body>
+     <div id="wrapper">
+      <header>
+        <div class="row">
+          <div class="log-title-content">
+          <span class="logo-img"><img src="static/MicrosoftTeams-image (11).png"/></span>
+          <h4>CaseNotes INSIGHT - A GenAI Solution for Patient Case Notes</h4>
+          </div>
+          <div class="account-con">
+          <span class="avathar-img"><img src="static/MicrosoftTeams-image (10).png"/></span>
+          <span>admin</span>
+          </div><!--account-con-close-->
+
+        </div>
+      </header>
+      <div class="wrapper-container">
+      <div class="row">
+      <div class="container-left">
+          <div class="sidenav-fix">
+    <ul>
+      <li ><a href="{{url_for('about')}}">
+        <i class="bx bxs-home" width="1.1rem" height="1.1rem"></i> About</a></li>
+      <li ><a href="{{url_for('upload')}}">
+        <i class="bx bx-cloud-upload" width="1.1rem" height="1.1rem"></i>
+        Upload</a></li>
+      <li><a href="{{url_for('casenotee')}}">
+        <i class="bx bx-grid-alt" width="1.1rem" height="1.1rem">
+  </i> Case Note Insight</a></li>
+      <li ><a href="{{url_for('patient')}}">
+        <i class="bx bx-layer" width="1.1rem" height="1.1rem"></i>
+        Patient Insight</a></li>
+    </ul>
+  </div>
+      </div><!--container-left-close-->
+
+      <div class="container-right">
+          <div class="patient-insight">
+    <form action="\add_data" method="post">
+    <div class="full-width patient-case-block">
+    <div class="form-field">
+      <h3>Enter Patient's Case Note</h3>
+      <textarea name="case_note"></textarea>
+      <button id="patient-case" class="side-effect btn btn-primary">Submit</button>
+    </div>
+    </div>
+    </form>
+
+<div class="accordion-container">
+  <details class="accordion-block" id="accordion-block1">
+    <summary class="accordion">𝐃𝐢𝐝 𝐭𝐡𝐞 𝐩𝐚𝐭𝐢𝐞𝐧𝐭 𝐦𝐞𝐧𝐭𝐢𝐨𝐧 𝐚𝐧𝐲 𝐜𝐡𝐚𝐥𝐥𝐞𝐧𝐠𝐞𝐬 𝐨𝐫 𝐛𝐚𝐫𝐫𝐢𝐞𝐫𝐬 𝐡𝐞/𝐬𝐡𝐞 𝐡𝐚𝐬 𝐟𝐚𝐜𝐞𝐝 𝐢𝐧 𝐚𝐝𝐡𝐞𝐫𝐢𝐧𝐠 𝐭𝐨 𝐭𝐡𝐞 𝐭𝐫𝐞𝐚𝐭𝐦𝐞𝐧𝐭 𝐰𝐢𝐭𝐡 𝐛𝐫𝐚𝐧𝐝 𝐗𝐘𝐙 𝐢𝐧 𝐭𝐡𝐢𝐬 𝐜𝐚𝐬𝐞 𝐧𝐨𝐭𝐞?</summary>
+    <!-- <button class="accordion">Accordion 1</button> -->
+    <div class="panel">
+      <p>{{ answer11 }}</p>
+    </div>
+  </details><!--accordion-block1-->
+
+  <details class="accordion-block" id="accordion-block2">
+    <summary class="accordion">𝐈𝐬 𝐭𝐡𝐞𝐫𝐞 𝐚𝐧𝐲 𝐦𝐞𝐧𝐭𝐢𝐨𝐧 𝐢𝐧 𝐭𝐡𝐞 𝐜𝐚𝐬𝐞 𝐧𝐨𝐭𝐞 𝐭𝐡𝐚𝐭 𝐭𝐡𝐞 𝐩𝐚𝐭𝐢𝐞𝐧𝐭 𝐡𝐚𝐬 𝐬𝐰𝐢𝐭𝐜𝐡𝐞𝐝 𝐟𝐫𝐨𝐦 𝐛𝐫𝐚𝐧𝐝 𝐗𝐘𝐙 𝐭𝐨 𝐚𝐧𝐨𝐭𝐡𝐞𝐫 𝐦𝐞𝐝𝐢𝐜𝐚𝐭𝐢𝐨𝐧,𝐚𝐧𝐝 𝐰𝐡𝐚𝐭 𝐫𝐞𝐚𝐬𝐨𝐧𝐬 𝐨𝐫 𝐟𝐚𝐜𝐭𝐨𝐫𝐬 𝐥𝐞𝐝 𝐭𝐨 𝐭𝐡𝐢𝐬 𝐝𝐞𝐜𝐢𝐬𝐢𝐨𝐧?</summary>
+    <!-- <button class="accordion">Accordion 2</button> -->
+    <div class="panel">
+      <p>{{ answer12 }}</p>
+    </div>
+  </details><!--accordion-block2-->
+
+  <details class="accordion-block" id="accordion-block3">
+    <summary class="accordion">𝐃𝐢𝐝 𝐭𝐡𝐞 𝐜𝐚𝐬𝐞 𝐧𝐨𝐭𝐞 𝐜𝐨𝐧𝐭𝐚𝐢𝐧 𝐚𝐧𝐲 𝐬𝐮𝐜𝐜𝐞𝐬𝐬 𝐬𝐭𝐨𝐫𝐢𝐞𝐬 𝐨𝐫 𝐩𝐨𝐬𝐢𝐭𝐢𝐯𝐞 𝐭𝐞𝐬𝐭𝐢𝐦𝐨𝐧𝐢𝐚𝐥𝐬 𝐟𝐫𝐨𝐦 𝐭𝐡𝐞 𝐩𝐚𝐭𝐢𝐞𝐧𝐭 𝐚𝐛𝐨𝐮𝐭 𝐡𝐢𝐬/𝐡𝐞𝐫 𝐞𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞 𝐰𝐢𝐭𝐡 𝐛𝐫𝐚𝐧𝐝 𝐗𝐘𝐙? 𝐖𝐡𝐚𝐭 𝐬𝐩𝐞𝐜𝐢𝐟𝐢𝐜 𝐛𝐞𝐧𝐞𝐟𝐢𝐭𝐬 𝐨𝐫 𝐢𝐦𝐩𝐫𝐨𝐯𝐞𝐦𝐞𝐧𝐭𝐬 𝐚𝐫𝐞 𝐡𝐢𝐠𝐡𝐥𝐢𝐠𝐡𝐭𝐞𝐝?</summary>
+    <!-- <button class="accordion">Accordion 3</button> -->
+    <div class="panel">
+      <p>{{ answer13 }}</p>
+    </div>
+  </details><!--accordion-block3-->
+</div><!--accordion-container-->
+
+
+
+  <div class="additional-block">
+  <h3>Additional Question</h3>
+  <h4>Ask here</h4>
+  <form action="/mp_data" method="post">
+  <textarea name="add_ques" class="additional-textarea"></textarea>
+  <button id="additional-text" class="additional-submit btn btn-primary">Submit</button>
+  </form>
+  </div>
+  </div>
+
+  <div class="answer-block">
+    <details class="accordion-block" id="accordion-block4">
+    <summary class="accordion">Answer</summary>
+    <!-- <button class="accordion">Accordion 3</button> -->
+    <div class="panel">
+      <p>{{ answer }}</p>
+    </div>
+  </details><!--accordion-block3-->
+
+  </div>
+
+      </div><!--container-right-close-->
+
+      <footer>
+          <p>@2023 Cognizant. All Rights Reserved</p>
+      </footer>
+      </div><!--row close-->
+      </div><!--wrapper-container-close-->
+      </div><!--wrapper-close-->
+</body>
+</html>

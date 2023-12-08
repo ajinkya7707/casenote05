@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Casenote</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+        /* You can add global styles to this file, and also import other style files */
+
+
+#wrapper{width:100%;margin: 0 auto;overflow: hidden;}
+* {margin: 0;padding: 0;}
+.row {max-width: 1280px;margin: 0 auto;padding: 0px;width: 100%;}
+header{width: 100%;height: 60px;background: #2e4070;position: fixed;z-index: 999;}
+header h4 {width:100%;font-size: 18px;font-family: arial;padding: 20px 2%;color: #fff;}
+* {margin: 0;padding: 0;}
+
+body {
+  background-image: url('static/MicrosoftTeams-image (6).png');
+  background-size: cover;
+}
+
+.wrapper-container {margin-top: 60px;}
+/*container-left*/
+.container-left {
+  width: 18%;
+  float: left;
+  color: #fff;
+  height: 500px;
+}
+.sidenav-fix ul li{
+  list-style: none;
+  list-style: none;
+  padding: 20px 20px;
+  font-size: 14px;
+  font-family: arial;
+  cursor: pointer;
+  border-bottom: 1px solid #605c5c;
+}
+.container-right {
+  width: 79%;
+  float: left;
+  padding: 1.5%;
+  border: 1px solid #ccc;
+  margin: 1.5%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+.sidenav-fix{
+  width: 228px;
+  float: left;
+  border-top: 1px solid #ccc;
+  position:fixed;
+  background: #2e4070;
+  height: 550px;
+}
+/* .sidenav-fix ul{
+  margin-top: 10px;
+} */
+/* .sidenav-fix ul li{
+  padding-left: 12px;
+} */
+span.logo-img {
+  float: left;
+  margin-top: 12px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+.logo-img img{width: 30px;}
+
+
+.sidenav-fix ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+i-bs {
+  padding-right: 10px;
+  float: left;
+}
+.about,.upload{font-family: Arial, Helvetica, sans-serif;}
+h3{font-size: 16px;padding-bottom: 15px;font-family: Arial, Helvetica, sans-serif;font-weight: bold;}
+.about p{font-size: 14px;}
+
+
+/*Bootstrap button*/
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+[type=reset], [type=submit], button, html [type=button] {
+  -webkit-appearance: button;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+.btn:focus, .btn:hover {
+  text-decoration: none;
+}
+.btn-info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+.btn-info:hover {
+  color: #fff;
+  background-color: #138496;
+  border-color: #117a8b;
+}
+.btn-success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.btn-success:hover {
+  color: #fff;
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+.upload-input {
+  margin-bottom: 15px;
+}
+[type="file"].file-input.upload-file-btn {
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: arial;
+}
+input[type=file]::file-selector-button {
+  border: none;
+  padding: .6em .6em;
+  border-radius: .2em;
+  border-right:1px solid #ccc;
+  background-color:#007bff;
+  transition: 1s;
+  color:#fff;
+  font-family: arial;
+}
+input[type=file]::file-selector-button:hover {
+  background-color: #0069d9;
+}
+
+/*casenote-insight css*/
+.casenote-insight,.form-field,.form-field label,.form-field textarea{width:100%;float:left;}
+.full-width{width:100%;float:left;}
+.half-width{width: 50%;float:left;}
+.form-field{margin-bottom: 10px;}
+.form-field label{font-family: Arial, Helvetica, sans-serif;font-size: 14px;margin-bottom: 10px;}
+.form-field textarea{height: 100px;width: 100%;margin-bottom: 10px;border: 1px solid #ccc;}
+.side-effect{margin-right: 15px;}
+
+/*accordian css*/
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px 30px 18px 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 14px;
+  transition: 0.4s;
+  border-bottom: 1px solid rgb(76, 132, 206);
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.accordion-block .active,.accordion-block .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion-block .accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  position: absolute;
+  top: 36%;
+  right: 10px;
+}
+
+.accordion-block .active:after {
+  content: "\2212";
+}
+.acc-icon-img{width: 15px;margin-right: 5px;}
+.panel {
+  padding: 0px 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.panel p {
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.accordion-block,.additional-block,.patient-case-block{width: 100%;float:left;margin-bottom: 15px;}
+h4{font-family: Arial, Helvetica, sans-serif;font-size: 15px;font-weight: bold;margin-bottom: 10px;}
+textarea.additional-textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+}
+.form-field img {
+  max-width: 100%;
+}
+.side-effect.active,.side-effect{border-radius: 0px;margin-right: 0px;}
+.cost.active,.cost{border-radius: 0px;}
+.patient-chart {width: 95%;}
+.patient-chart .modal-dialog{max-width: 600px;}
+
+/*Landing css*/
+#wrapper-landing {width: 100%;margin: 0 auto;overflow: hidden;font-family: arial;}
+.landing-page{float: left;width: 100%;background-image: url('static/MicrosoftTeams-image (6).png');height: 595px;background-size: cover;}
+.landing-title {
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -59px;
+  font-size: 20px;
+}
+.form-control{font-size: 14px;}
+.login-title h3 {
+  margin: 0px;
+  padding: 0px;
+}
+.login-main {
+  background: #fff;
+  width: 500px;
+  position: absolute;
+  padding: 25px;
+  top: 50%;
+  left: 44%;
+  margin-left: -250px;
+  margin-top: -160px;
+}
+.cog-logo {
+  float: left;
+  width: 100%;
+  text-align: right;
+}
+.cog-logo img {
+  width: 90px;
+  height: 25px;
+}
+.login-title{float: left;width:100%;border-bottom: 2px solid #2196F3;text-align: center;}
+.login-title span{font-size: 16px;font-weight: bold;}
+.login-title img {
+  width: 35px;
+}
+.inner-text{float: left;width:100%;text-align: center;padding-bottom: 10px;}
+.inner-text span {
+  font-size: 14px;
+  font-family: arial;
+}
+button#login-submit {
+  float: right;
+}
+.forgot-password a {
+  font-size: 14px;color:#495057;
+}
+/*header page css*/
+app-headerpage {
+  float: left;
+  width: 100%;
+}
+
+/*footer css*/
+footer {
+  position: fixed;
+  background: #2e4070;
+  width: 100%;
+  float: left;
+  color: #fff;
+  text-align: center;
+  bottom: 0px;
+  left: 0px;
+}
+app-footerpage {
+  float: left;
+  width: 100%;
+}
+app-footerpage p {
+  padding: 5px;
+  margin: 0px;
+  font-size: 10px;
+  font-family: arial;
+}
+.account-con span {
+  color: #fff;
+  font-size: 12px;
+  font-family: arial;
+  float: left;
+}
+.log-title-content {
+  width: 92%;
+  float: left;
+}
+.account-con {
+  width: 8%;
+  float: left;
+  margin-top: 22px;
+}
+span.avathar-img {
+  float: left;
+  margin-right: 5px;
+}
+.avathar-img img {
+  width: 15px;
+  float: left;
+}
+.keyindicators {
+  border: 1px solid #ccc;
+  padding: 10px;
+  float: left;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+/* .chart-img {
+  padding: 12px;
+
+} */
+.chart-img img{
+  padding: 12px;
+  padding-top: 13px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+footer p {
+  padding: 5px;
+  margin: 0px;
+  font-size: 10px;
+  font-family: arial;
+}
+
+@media screen and (max-width: 1150px) {
+  .sidenav-fix{width: 18%;}
+}
+
+@media screen and (max-width: 780px) {
+  .half-width{width: 100%;}
+}
+    </style>
+    <script>
+       function validateForm() {
+            var username = document.getElementById('InputEmail1').value;
+            var password = document.getElementById('InputPassword1').value;
+
+            if (username.trim() === '' || password.trim() === '') {
+                alert('Please enter both username and password');
+                return false;
+            }
+
+            // Add more validation checks if needed
+
+            // If the form is valid, redirect to the next page
+            return true;
+        }
+    </script>
+</head>
+<body>
+  <div class="landing-content">
+<!-- <span class="landing-title">Generative AI</span> -->
+<div class="login-main">
+<div class="cog-logo">
+  <img src="static/MicrosoftTeams-image (7).png"/>
+</div>
+<div class="login-title">
+  <img src="static/MicrosoftTeams-image (8).png"/>
+  <span>CaseNotes Insight</span>
+  </div>
+  <div class="inner-text">
+   <span>A Generative AI Solution</span>
+  </div>
+<!-- <form id="login-form" [formGroup]="loginForm"> -->
+  <form id="login-form" action="/About" method="get" onsubmit="return validateForm()">
+<div class="login-content">
+<div class="form-group">
+  <input type="text" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter Username" required>
+</div><!--form-field-->
+<div class="form-group">
+  <input type="password" class="form-control" id="InputPassword1" placeholder="Password" required/>
+</div>
+<div class="forgot-password">
+  <a href="#">Forgot Password</a>
+</div><!--forgot-password-close-->
+<button type="submit" id="login-submit" class="btn btn-primary" >Login</button>
+</div>
+</form><!--login-form-->
+</div>
+</div>
+  <footer>
+          <p>@2023 Cognizant. All Rights Reserved</p>
+      </footer>
+
+</body>
+</html>
